@@ -1,4 +1,4 @@
-import EmailManagerPage from '../../../pages/contentManager';
+import ContentEditorPage from '../../../pages/contentManager';
 
 describe('Email Editor Tests with Nested XPath', () => {
   before(() => {
@@ -7,11 +7,11 @@ describe('Email Editor Tests with Nested XPath', () => {
   });
 
   it('Should modify text properties inside nested iframe and verify changes', () => {
-    const emailManagerPage = new EmailManagerPage();
-      emailManagerPage.changeTextSize(40);
-      emailManagerPage.changeFontFamily('Andale Mono');
-      emailManagerPage.exportHtmlFunction();
-      emailManagerPage.cssPropertiesAssetions("40px", '"andale mono", times')
+    const contentEditorPage = new ContentEditorPage();
+      contentEditorPage.updateTextSize(50);
+      contentEditorPage.updateFontFamily('Arial Black');
+      contentEditorPage.triggerHtmlExport();
+      contentEditorPage.verifyCssProperties("50px", '"arial black", AvenirNext-Heavy, "avant garde", arial')
   });
 });
  
