@@ -46,8 +46,8 @@ To run this project, ensure the following are installed:
    - Navigates to the content editor's interface.
 
 2. **Apply Style Changes**:
-   - Updates the text size to `40px`.
-   - Switches the font type to `Andale Mono`.
+   - Updates the text size to `50px`.
+   - Switches the font type to `Arial Black`.
 
 3. **Generate Export**:
    - Triggers the export functionality to download the updated HTML template.
@@ -57,12 +57,7 @@ To run this project, ensure the following are installed:
 
 ## Customization
 
-- You can modify the font size and font type in the `contentEditorTest.cy.js` file to test additional scenarios.
+- You can modify the font size and font type in the `editorTests.cy.js` file to test additional scenarios.
 - Update the test file to add more validations or accommodate new editor features.
-
-## Notes
-
-- Ensure that all dependencies are installed and up-to-date to avoid runtime issues.
-- For advanced scenarios, Cypress commands can be extended or modified to meet specific requirements.
 
 ---
