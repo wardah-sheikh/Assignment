@@ -11,36 +11,17 @@ class ContentEditorPage {
     }
   
     updateTextSize(newSize) {
-        this.getIframeContent()
-            .find(this.headingLocator)
-            .click({ force: true });
-        this.getIframeContent()
-            .find(this.textSizeInputField)
-            .eq(0)
-            .click({ force: true });
-        this.getIframeContent()
-            .find(this.textSizeInputField)
-            .eq(0)
-            .clear();
-        cy.wait(4000);
-        this.getIframeContent()
-            .find(this.textSizeInputField)
-            .eq(0)
-            .click({ force: true });
-        this.getIframeContent()
-            .find(this.textSizeInputField)
-            .eq(0)
-            .type(newSize);
+        this.getIframeContent().find(this.headingLocator).click({ force: true });
+        this.getIframeContent().find(this.textSizeInputField).eq(0).click({ force: true });
+        this.getIframeContent().find(this.textSizeInputField).eq(0).clear();
+        cy.wait(2000);
+        this.getIframeContent().find(this.textSizeInputField).eq(0).click({ force: true });
+        this.getIframeContent().find(this.textSizeInputField).eq(0).type(newSize);
     }
   
     updateFontFamily(fontFamily) {
-        this.getIframeContent()
-            .find(this.fontFamilyDropdown)
-            .click({ force: true });
-        this.getIframeContent()
-            .find(`span:contains("${fontFamily}")`)
-            .eq(0)
-            .click({ force: true });
+        this.getIframeContent().find(this.fontFamilyDropdown).click({ force: true });
+        this.getIframeContent().find(`span:contains("${fontFamily}")`).eq(0).click({ force: true });
     }
   
     triggerHtmlExport() {
@@ -48,10 +29,7 @@ class ContentEditorPage {
     }
   
     verifyCssProperties(expectedFontSize, expectedFontFamily) {
-        this.getIframeContent()
-            .find(this.editableElement)
-            .should('have.css', 'font-size', `${expectedFontSize}`)
-            .should('have.css', 'font-family', `${expectedFontFamily}`);
+        this.getIframeContent().find(this.editableElement).should('have.css', 'font-size', `${expectedFontSize}`).should('have.css', 'font-family', `${expectedFontFamily}`);
     }
   }
   
